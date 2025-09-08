@@ -96,7 +96,7 @@ import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
       {/* LOGIN MODAL */}
       {showLogin && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-gradient-to-br from-gray-700 via-slate-900 to-stone-600 p-8  p-6 rounded-2xl w-full max-w-md relative transition-shadow">
+          <div className="bg-bg-gradient-to-r from-[#112240]/50 via-[#112240]/10 to-[#0a192f]/90 p-8  p-6 rounded-2xl w-full max-w-md relative transition-shadow">
             <button
               onClick={() => setShowLogin(false)}
               className="absolute top-2 right-2 text-gray-500 text-red-400 hover:text-red-600 hover:text-xl"
@@ -111,7 +111,7 @@ import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
       {/* REGISTER MODAL */}
       {showRegister && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-gray-900 p-6 rounded-lg w-full max-w-md relative">
+          <div className="bg-bg-gradient-to-r from-[#112240]/50 via-[#112240]/10 to-[#0a192f]/90 p-6 rounded-lg w-full max-w-md relative">
             <button
               onClick={() => setShowRegister(false)}
               className="absolute top-2 right-2 text-gray-400 text-red-400 hover:text-red-600"

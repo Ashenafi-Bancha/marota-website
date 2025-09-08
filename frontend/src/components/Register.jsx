@@ -52,7 +52,7 @@ export default function Register({ onRegisterSuccess }) {
     
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-md bg-gradient-to-br from-gray-700 via-gray-900 to-gray-600 p-8 rounded-2xl shadow-2xl space-y-6 transition-shadow border-3 border-l-pink-500 border-r-orange-500 border-t-purple-500 border-b-yellow-300 hover:shadow-pink-500/20"
+        className="w-full max-w-md bg-gbg-gradient-to-r from-[#112240]/50 via-[#112240]/10 to-[#0a192f]/90 p-8 rounded-2xl shadow-2xl space-y-6 transition-shadow border-3 border-l-pink-500 border-r-orange-500 border-t-purple-500 border-b-yellow-300 hover:shadow-pink-500/20"
       >
         {/* Title */}
         <h2 className="text-3xl font-bold text-center text-white">Sign Up</h2>
