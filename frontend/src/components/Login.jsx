@@ -1,8 +1,9 @@
+// src/components/Login.jsx
 import { useState } from "react";
 import axios from "axios";
 import { FaEye, FaEyeSlash, FaEnvelope, FaLock } from "react-icons/fa";
 
-export default function Login({ onLoginSuccess }) {
+export default function Login({ onLoginSuccess, onSwitchToRegister }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -29,7 +30,10 @@ export default function Login({ onLoginSuccess }) {
     if (!validateForm()) return;
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", { email, password });
+      const res = await axios.post("http://localhost:5000/api/auth/login", {
+        email,
+        password,
+      });
       onLoginSuccess(res.data.user);
       localStorage.setItem("token", res.data.token);
     } catch (err) {
@@ -40,9 +44,8 @@ export default function Login({ onLoginSuccess }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-full max-w-md bg-gradient-to-r from-[#112240]/50 via-[#112240]/10 to-[#0a192f]/90 p-8 rounded-2xl shadow-2xl space-y-6 transition-shadow hover:shadow-cyan-500/20"
+      className="w-full space-y-6"
     >
-      {/* Title */}
       <h2 className="text-3xl font-bold text-center text-white">Sign In</h2>
       <p className="text-gray-300 text-center">Welcome back! Please enter your details</p>
 
@@ -58,9 +61,9 @@ export default function Login({ onLoginSuccess }) {
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className={`w-full pl-10 px-4 py-3 rounded-lg bg-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition
-              ${errors.email ? "focus:ring-red-500" : ""}
-            `}
+            className={`w-full pl-10 px-4 py-3 rounded-lg bg-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition ${
+              errors.email ? "focus:ring-red-500" : ""
+            }`}
           />
         </div>
         {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
@@ -78,9 +81,9 @@ export default function Login({ onLoginSuccess }) {
             placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className={`w-full pl-10 pr-10 px-4 py-3 rounded-lg bg-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition
-              ${errors.password ? "focus:ring-red-500" : ""}
-            `}
+            className={`w-full pl-10 pr-10 px-4 py-3 rounded-lg bg-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition ${
+              errors.password ? "focus:ring-red-500" : ""
+            }`}
           />
           <button
             type="button"
@@ -93,25 +96,24 @@ export default function Login({ onLoginSuccess }) {
         {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
       </div>
 
-      {/* Button */}
+      {/* Submit */}
       <button
         type="submit"
-        className="w-full bg-cyan-500 text-[#0a192f] py-3 rounded-full font-semibold hover:bg-cyan-600 transition duration-300 shadow-md"
+        className="w-full bg-cyan-400 text-white py-3 rounded-full font-semibold hover:bg-cyan-500 transition duration-300 shadow-md"
       >
         Sign In
       </button>
 
-      {/* Forgot password */}
-      <div className="text-right text-sm text-gray-400">
-        <a href="#" className="text-cyan-400 hover:text-cyan-500 transition">Forgot password?</a>
-      </div>
-
-      {/* Create account */}
+      {/* Switch to Register */}
       <div className="text-center text-gray-400 text-sm">
         Don’t have an account?{" "}
-        <a href="/signup" className="text-cyan-400 hover:text-cyan-500 font-medium transition">
+        <button
+          type="button"
+          onClick={onSwitchToRegister}
+          className="text-cyan-400 hover:text-cyan-500 font-medium transition"
+        >
           Create account
-        </a>
+        </button>
       </div>
     </form>
   );

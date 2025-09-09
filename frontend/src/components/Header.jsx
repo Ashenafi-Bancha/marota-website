@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import Register from "./Register";
+import Modal from "./Modal";
 import Login from "./Login";
 import logo from "../assets/logo1.png";
 import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
@@ -23,7 +24,7 @@ import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
         
         {/* Desktop Nav */}
         <nav className="hidden md:flex gap-6">
-          {["Home", "About", "Courses", "Portfolio", "Gallery", "Instructors", "Contact"].map(
+          {["Home", "About", "Services", "Portfolio", "Gallery", "Instructors", "Contact"].map(
             (item) => (
               <a
                 key={item}
@@ -54,13 +55,13 @@ import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
           {/* Auth Buttons */}
           <button
             onClick={() => setShowLogin(true)}
-            className="bg-blue-500 px-3 py-2 rounded-lg hover:bg-blue-600"
+            className="bg-cyan-400 px-3 py-2 rounded-lg hover:bg-cyan-500"
           >
             Sign In
           </button>
           <button
             onClick={() => setShowRegister(true)}
-            className="bg-green-500 px-3 py-2 rounded-lg hover:bg-green-600"
+            className="bg-yellow-400 px-3 py-2 rounded-lg hover:bg-yellow-500"
           >
             Sign Up
           </button>
@@ -93,34 +94,30 @@ import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
         </div>
       )}
 
-      {/* LOGIN MODAL */}
+      {/* Login Modal */}
       {showLogin && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-bg-gradient-to-r from-[#112240]/50 via-[#112240]/10 to-[#0a192f]/90 p-8  p-6 rounded-2xl w-full max-w-md relative transition-shadow">
-            <button
-              onClick={() => setShowLogin(false)}
-              className="absolute top-2 right-2 text-gray-500 text-red-400 hover:text-red-600 hover:text-xl"
-            >
-              ✕
-            </button>
-            <Login />
-          </div>
-        </div>
+        <Modal onClose={() => setShowLogin(false)}>
+          <Login
+            onLoginSuccess={(user) => console.log("Logged in", user)}
+            onSwitchToRegister={() => {
+              setShowLogin(false);
+              setShowRegister(true);
+            }}
+          />
+        </Modal>
       )}
 
-      {/* REGISTER MODAL */}
+      {/* Register Modal */}
       {showRegister && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-bg-gradient-to-r from-[#112240]/50 via-[#112240]/10 to-[#0a192f]/90 p-6 rounded-lg w-full max-w-md relative">
-            <button
-              onClick={() => setShowRegister(false)}
-              className="absolute top-2 right-2 text-gray-400 text-red-400 hover:text-red-600"
-            >
-              ✕
-            </button>
-            <Register />
-          </div>
-        </div>
+        <Modal onClose={() => setShowRegister(false)}>
+          <Register
+            onRegisterSuccess={(user) => console.log("Registered", user)}
+            onSwitchToLogin={() => {
+              setShowRegister(false);
+              setShowLogin(true);
+            }}
+          />
+        </Modal>
       )}
     </header>
   );

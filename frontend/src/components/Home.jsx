@@ -24,7 +24,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center ml-5 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center ml-5 overflow-hidden">
 
       {/* Background images slideshow */}
       <div className="absolute inset-0 z-0 ">
@@ -67,10 +67,10 @@ export default function Hero() {
           </a>
 
           <a
-            href="#courses"
+            href="#portfolio"
             className="px-6 py-3 bg-[var(--accent-blue)] text-[var(--primary-dark)] md:rounded-lg rounded-3xl hover:bg-[rgba(100,255,218,0.9)] hover:shadow-lg transition w-full sm:w-auto text-center hover:translate-y-[-3px] transition"
           >
-            View Courses
+            View Portfolio
           </a>
         </div>
       </div>
