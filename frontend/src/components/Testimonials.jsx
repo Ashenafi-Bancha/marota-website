@@ -53,16 +53,19 @@ export default function Testimonials() {
           What Our Students Say
         </h2>
       </div>
+
       <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
         {testimonials.map((t, idx) => (
           <div
             key={idx}
-            className="bg-[#0a192f] p-6 rounded-lg shadow-lg flex flex-col items-center text-center"
+            className="bg-[#0a192f] p-6 rounded-lg shadow-lg flex flex-col items-center text-center 
+                       transform transition duration-300 hover:scale-105 hover:shadow-2xl 
+                       hover:border hover:border-[var(--accent-blue)]"
           >
             <img
               src={t.image}
               alt={t.name}
-              className="w-24 h-24 rounded-full object-cover  mb-4 "
+              className="w-24 h-24 rounded-full object-cover mb-4 border-2 border-transparent hover:border-[var(--accent-orange)] transition"
             />
             <p className="text-gray-300 italic">"{t.text}"</p>
             <h3 className="mt-4 font-semibold text-[var(--accent-blue)]">

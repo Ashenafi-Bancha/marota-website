@@ -30,7 +30,7 @@ const Contact = () => {
             </div>
             <div className="flex items-center space-x-3">
               <FaBuilding className="text-blue-400 text-2xl" />
-              <span className="text-lg">Tona Complex, 2nd Floor</span>
+              <span className="text-lg">Tona Complex, 2nd floor</span>
             </div>
           </div>
         </div>

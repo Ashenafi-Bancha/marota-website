@@ -12,9 +12,8 @@ function Footer() {
           <h4 className="text-xl font-semibold text-white mb-4 relative ">
             Marota Studio
           </h4>
-          <p className="text-sm leading-relaxed">
-            Where cinematic artistry and digital innovation converge to create
-            extraordinary experiences.
+          <p className="text-sm leading-relaxed text-left">
+           Where cinematic artistry and digital innovation converge to create extraordinary experiences, Marota is dedicated to empowering Ethiopia’s digital transformation. We focus on building creative and technical capacity across the nation — with a special commitment to Southern Ethiopia, particularly Wolaita by training the next generation in film, web development, graphics, and emerging technologies.
           </p>
         </div>
 
@@ -23,11 +22,14 @@ function Footer() {
           <h4 className="text-xl font-semibold text-white mb-4 relative ">
             Quick Links
           </h4>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-2 text-sm text-left">
             <li><a href="#home" className="hover:text-yellow-400 transition">Home</a></li>
+            <li><a href="#about" className="hover:text-yellow-200 transition">About</a></li>
             <li><a href="#services" className="hover:text-yellow-200 transition">Services</a></li>
+            <li><a href="#instructors" className="hover:text-yellow-200 transition">Instructors</a></li>
             <li><a href="#showcase" className="hover:text-yellow-200 transition">Portfolio</a></li>
-            <li><a href="#courses" className="hover:text-yellow-200 transition">Courses</a></li>
+            <li><a href="#gallery" className="hover:text-yellow-200 transition">Gallery</a></li>
+            <li><a href="#testimonials" className="hover:text-yellow-200 transition" >Testimonials</a></li>
             <li><a href="#contact" className="hover:text-yellow-200 transition">Contact</a></li>
           </ul>
         </div>
@@ -37,12 +39,16 @@ function Footer() {
           <h4 className="text-xl font-semibold text-white mb-4 relative ">
             Academy Programs
           </h4>
-          <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-yellow-200 transition">Cinematography Mastery</a></li>
-            <li><a href="#" className="hover:text-yellow-200 transition">Film Direction Workshop</a></li>
-            <li><a href="#" className="hover:text-yellow-200 transition">Full-Stack Development</a></li>
-            <li><a href="#" className="hover:text-yellow-200 transition">UI/UX Design</a></li>
-            <li><a href="#" className="hover:text-yellow-200 transition">Digital Marketing</a></li>
+          <ul className="space-y-2 text-sm text-left">
+            <li><a href="#services" className="hover:text-yellow-200 transition">Cinematography Mastery</a></li>
+            <li><a href="#services" className="hover:text-yellow-200 transition">Film Direction Workshop</a></li>
+            <li><a href="#services" className="hover:text-yellow-200 transition">Full-Stack Development</a></li>
+            <li><a href="#services" className="hover:text-yellow-200 transition">Mobile App Development</a></li>
+            <li><a href="#services" className="hover:text-yellow-200 transition">Basick Computer Skills</a></li>
+            <li><a href="#services" className="hover:text-yellow-200 transition">Graphics Design</a></li>
+            <li><a href="#services" className="hover:text-yellow-200 transition">IT Support and Networking</a></li>
+            <li><a href="#services" className="hover:text-yellow-200 transition">Logo Design</a></li>
+
           </ul>
         </div>
 
